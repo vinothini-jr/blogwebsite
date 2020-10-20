@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+{% extends 'blogg/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+
+</head>
+<body>
+
+{% block content %}
+<br/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<centre><h3>Tech-and-Code</h3></centre><br>
+<a href="#"><i class="fa fa-instagram" style="font-size:28px;color:black"></i></a>
+&nbsp;<a href="#">&nbsp;<i class="fa fa-facebook" style="font-size:28px;color:black"></i></a>
+&nbsp;&nbsp;<a href="#"><i class="fa fa-envelope" style="font-size:24px;color:black"></i></a>
+<hr>
+
+<ul>
+    {% for post in object_list %}
+    <li> <h6><a href="{% url 'detail' post.pk %}">{{ post.title }}</a> </h6>
+    {{ post.content| slice:":50"|safe}}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+{% endblock %}
