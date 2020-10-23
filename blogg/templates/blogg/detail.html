@@ -11,10 +11,9 @@
 <h3>{{ post.title }}</h3>
 &nbsp;&nbsp;&nbsp;-{{ post.author }}&nbsp;{{ post.date }}<br/>
 <br/>
+
 <br/>
-{% for i in post.profile.all %}
-{{ i.bio }}
-{% endfor %}
+
 <br/>
 <div class="alert alert-info" role="alert" > {{ post.content|safe }}<br/></div><br/>
 <br/>

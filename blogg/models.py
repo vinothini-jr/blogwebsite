@@ -8,7 +8,7 @@ class Post(models.Model):
     title=models.CharField(max_length=100)
     date=models.DateTimeField(auto_now_add=True)
     content=models.TextField()
-    #tags=TaggableManager(related_name='tag')
+    tags=TaggableManager()
 
     def __str__(self):
         return self.title
@@ -22,13 +22,13 @@ class Comment(models.Model):
     def __str__(self):
         return '%s-%s' %(self.post.title,self.name)
 
-class Tag(models.Model):
+'''class Tag(models.Model):
     post=models.ForeignKey(Post,related_name='tags',on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
     title =models.TextField()
 
     def __str__(self):
-        return self.title
+        return self.title'''
 
 class Profile(models.Model):
     #postt = models.ForeignKey(Post, related_name='tags', on_delete=models.CASCADE)

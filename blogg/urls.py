@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 from .views import home, details, addcomments, prof, register_view
 
 urlpatterns = [
@@ -23,5 +24,6 @@ urlpatterns = [
     path('article/<int:pk>/comment/', addcomments.as_view(),name="add_comments"),
     path('article/<int:pk>/profi', prof.as_view(),name="profileinfo"),
     path('register/',register_view ),
+    #path('tag/<slug:tag_slug>',home.as_view(),name="hometag"),
 
 ]
